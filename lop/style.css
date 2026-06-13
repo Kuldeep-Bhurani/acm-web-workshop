@@ -1,0 +1,168 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	background-color: #0b0b0d;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	color: white;
+	user-select: none;
+}
+
+canvas {
+	display: block;
+}
+
+#ui-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.hud-box {
+	position: absolute;
+	padding: 20px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#top-left {
+	top: 10px;
+	left: 20px;
+}
+
+#boss-ui {
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 600px;
+}
+
+/* Progress bars */
+.bar-bg {
+	background: #222;
+	height: 14px;
+	width: 220px;
+	border: 2px solid #111;
+	margin-bottom: 6px;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+	position: relative;
+}
+
+.hp-fill {
+	background: linear-gradient(90deg, #cc1111, #ff3333);
+	height: 100%;
+	width: 100%;
+	transition: width 0.1s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.regain-fill {
+	background: #aa5555;
+	height: 100%;
+	width: 0%;
+	transition: width 0.1s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.stam-fill {
+	background: linear-gradient(90deg, #11aa11, #33cc33);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* Boss UI */
+.boss-bar-bg {
+	background: #222;
+	height: 22px;
+	width: 100%;
+	border: 2px solid #111;
+	position: relative;
+	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.boss-hp-fill {
+	background: linear-gradient(90deg, #770000, #bb0000);
+	height: 100%;
+	width: 100%;
+	transition: width 0.1s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.boss-stagger-bg {
+	background: #151515;
+	height: 8px;
+	width: 100%;
+	border: 2px solid #111;
+	margin-top: 22px;
+}
+
+.boss-stagger-fill {
+	background: #ffcc00;
+	height: 100%;
+	width: 0%;
+	transition:
+		width 0.1s,
+		background-color 0.2s;
+}
+
+/* Lies of P White Groggy Glow */
+@keyframes groggy-glow {
+	0% {
+		border-color: #111;
+		box-shadow: none;
+	}
+
+	50% {
+		border-color: #fff;
+		box-shadow: 0 0 15px #fff;
+	}
+
+	100% {
+		border-color: #111;
+		box-shadow: none;
+	}
+}
+
+.groggy-state {
+	animation: groggy-glow 0.5s infinite;
+}
+
+#game-over {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 64px;
+	font-weight: 900;
+	display: none;
+	text-shadow: 0 0 20px black;
+	letter-spacing: 4px;
+}
+
+#feedback-text {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 42px;
+	font-weight: bold;
+	opacity: 0;
+	transition:
+		opacity 0.1s,
+		top 0.1s;
+	letter-spacing: 2px;
+}

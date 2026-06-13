@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lies of P - 2D Refined Combat Demo</title>
+	<script defer src="./script.js"></script>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+	<canvas id="gameCanvas"></canvas>
+
+	<div id="ui-layer">
+		<div id="top-left" class="hud-box">
+			<div style="font-size: 14px; font-weight: bold; margin-bottom: 2px;">HP</div>
+			<div class="bar-bg">
+				<div id="player-regain" class="regain-fill"></div>
+				<div id="player-hp" class="hp-fill"></div>
+			</div>
+			<div style="font-size: 14px; font-weight: bold; margin-bottom: 2px;">STAMINA</div>
+			<div class="bar-bg">
+				<div id="player-stam" class="stam-fill"></div>
+			</div>
+			<p
+				style="font-size: 12px; color: #aaa; line-height: 1.5; margin-top: 15px; background: rgba(0,0,0,0.4); padding: 10px; border-radius: 4px;">
+				<b>WASD / Arrows:</b> Move<br>
+				<b>SPACE:</b> Dodge (I-Frames)<br>
+				<b>SHIFT:</b> Guard<br>
+				<b>LEFT / RIGHT CLICK:</b> Attacks<br><br>
+				<span style="color:#ffcc00"><b>MECHANICS:</b></span><br>
+				1. Only <b>60%</b> of block chip damage becomes Regain when an attack is gaurded
+				against.<br>
+				2. Unused Regain <span style="color:#aa5555"><b>gradually decays</b></span> over
+				time.<br>
+				3. Taking unblocked hits deletes your Regain pool!<br>
+				4. Perfect parry or an attack regains the health.<br>
+				5. Perfect parry is a well timed gaurd.<br>
+				6. A heavy attack (right click) will trigger a viceral hit on the boss when the boss is
+				groggy.<br>
+				7. The boss bar glowing white shows that the boss is groggy.
+			</p>
+		</div>
+
+		<div id="boss-ui" class="hud-box">
+			<div class="boss-bar-bg" id="boss-hp-container">
+				<div id="boss-hp" class="boss-hp-fill"></div>
+			</div>
+			<div class="boss-stagger-bg">
+				<div id="boss-stagger" class="boss-stagger-fill"></div>
+			</div>
+			<div style="margin-top: 8px; font-size: 16px; letter-spacing: 4px; font-weight: bold; color: #ddd;">
+				LAX</div>
+		</div>
+
+		<div id="feedback-text">PERFECT GUARD!</div>
+		<div id="game-over">PLAYER DED</div>
+	</div>
+</body>
+
+</html>
