@@ -119,7 +119,7 @@ canvas {
 		background-color 0.2s;
 }
 
-/* Lies of P White Groggy Glow */
+/* White Groggy Glow */
 @keyframes groggy-glow {
 	0% {
 		border-color: #111;

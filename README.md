@@ -11,9 +11,6 @@ Task:
 
 Links:
 - [DEMO](https://kuldeep-bhurani.github.io/acm-web-workshop/lop/)
-- [dir](./lop)
-- [HTML](./lop/index.html)
-- [CSS](./lop/style.css)
-- [JS](./lop/script.js)
+- [code_dir](./lop)
 
 ## Week 3
